@@ -15,16 +15,8 @@ gmailButton.addEventListener('click', ()=>{
 })
 
 
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
+
     const parentBlock = document.querySelector('.parent_block')
     const childBlock = document.querySelector('.child_block')
 
@@ -33,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function moveRight() {
         if (currentPosition < parentBlock.offsetWidth - childBlock.offsetWidth) {
             currentPosition += 5; 
+                
             childBlock.style.left = `${currentPosition}px`
             setTimeout(moveRight, 16)
         }
-        
     }
     moveRight();
 });
