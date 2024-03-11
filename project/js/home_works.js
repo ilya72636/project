@@ -1,3 +1,6 @@
+
+
+// Gmail
 const gmailInput = document.querySelector('#gmail_input')
 const gmailButton = document.querySelector('#gmail_button')
 const gmailSpan = document.querySelector('#gmail_result')
@@ -15,20 +18,250 @@ gmailButton.addEventListener('click', ()=>{
 })
 
 
+
+
+// квадрат
 document.addEventListener('DOMContentLoaded', function () {
+    const parentBlock = document.querySelector('.parent_block');
+    const childBlock = document.querySelector('.child_block');
 
-    const parentBlock = document.querySelector('.parent_block')
-    const childBlock = document.querySelector('.child_block')
+    let currentPositionX = 0;
+    let currentPositionY = 0;
+    const speed = 10;
 
-    let currentPosition = 0
+    function moveInPattern() {
+        if (currentPositionX < parentBlock.offsetWidth - childBlock.offsetWidth && currentPositionY === 0) {
+            currentPositionX += speed;
+        } else if (currentPositionX >= parentBlock.offsetWidth - childBlock.offsetWidth && currentPositionY < parentBlock.offsetHeight - childBlock.offsetHeight) {
+            currentPositionY += speed;
+        } else if (currentPositionX > 0 && currentPositionY >= parentBlock.offsetHeight - childBlock.offsetHeight) {
+            currentPositionX -= speed;
+        } else if (currentPositionX === 0 && currentPositionY > 0) {
+            currentPositionY -= speed;
+        } else {
+            currentPositionX = 0;
+            currentPositionY = 0;
+        }
 
-    function moveRight() {
-        if (currentPosition < parentBlock.offsetWidth - childBlock.offsetWidth) {
-            currentPosition += 5; 
-                
-            childBlock.style.left = `${currentPosition}px`
-            setTimeout(moveRight, 16)
+        childBlock.style.left = `${currentPositionX}px`;
+        childBlock.style.top = `${currentPositionY}px`;
+
+        setTimeout(moveInPattern, 15);
+    }
+
+    moveInPattern();
+});
+
+
+
+
+
+// сикундамер   DZ_2
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     var secondsDisplay = document.getElementById("seconds");
+//     var startButton = document.getElementById("start");
+//     var stopButton = document.getElementById("stop");
+//     var resetButton = document.getElementById("reset");
+
+//     var timerInterval;
+//     var counter = 0;
+
+//     startButton.addEventListener("click", function () {
+//         startButton.disabled = true;
+//         stopButton.disabled = false;
+//         resetButton.disabled = false;
+
+//         timerInterval = setInterval(function () {
+//             counter++;
+//             secondsDisplay.textContent = counter;
+//         }, 1000);
+//     });
+
+//     stopButton.addEventListener("click", function () {
+//         startButton.disabled = false;
+//         stopButton.disabled = true;
+//         clearInterval(timerInterval);
+//     });
+
+//     resetButton.addEventListener("click", function () {
+//         counter = 0;
+//         secondsDisplay.textContent = counter;
+//         startButton.disabled = false;
+//         stopButton.disabled = true;
+//         resetButton.disabled = true;
+//         clearInterval(timerInterval);
+//     });
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const parentContainer = document.querySelector('.container');
+    const secondsElement = document.getElementById('seconds');
+    const timeBlock = document.querySelector('.time_block');
+    const resultContainer = document.createElement('div');
+    resultContainer.id = 'resultContainer';
+    timeBlock.appendChild(resultContainer);
+
+    const resultMessageElement = document.createElement('div');
+    resultMessageElement.id = 'resultMessage';
+    resultContainer.appendChild(resultMessageElement);
+
+    const успелButton = document.createElement('button');
+    успелButton.textContent = 'Успел';
+    успелButton.classList.add('btn');
+    успелButton.style.display = 'none';
+
+    const неуспелButton = document.createElement('button');
+    неуспелButton.textContent = 'Не успел';
+    неуспелButton.classList.add('btn');
+    неуспелButton.style.display = 'none';
+
+    const resultButtonsContainer = document.createElement('div');
+    resultButtonsContainer.id = 'resultButtons';
+    resultContainer.appendChild(resultButtonsContainer);
+
+    const startButton = document.getElementById('start');
+    const stopButton = document.getElementById('stop');
+    const resetButton = document.getElementById('reset');
+
+    let timer;
+    let seconds = 0;
+    let timeIsUp = false;
+
+    function updateTimer() {
+        secondsElement.textContent = seconds;
+        seconds++;
+
+        if (seconds > 45) {
+            stopTimer();
+            showResultButtons();
         }
     }
-    moveRight();
+
+    function startTimer() {
+        if (!timer) {
+            timer = setInterval(updateTimer, 1000);
+            startButton.disabled = true;
+            stopButton.disabled = false;
+            resetButton.disabled = false;
+        }
+    }
+
+    function stopTimer() {
+        clearInterval(timer);
+        timer = null;
+        startButton.disabled = false;
+        stopButton.disabled = true;
+        resetButton.disabled = false;
+    }
+
+    function resetTimer() {
+        stopTimer();
+        seconds = 0;
+        updateTimer();
+        startButton.disabled = false;
+        resetButton.disabled = true;
+        resultContainer.innerHTML = '';
+        успелButton.style.display = 'none';
+        неуспелButton.style.display = 'none';
+        timeIsUp = false;
+    }
+
+    function showResultButtons() {
+        resultMessageElement.textContent = 'Время вышло! Выберите результат:';
+        успелButton.style.display = 'inline-block';
+        resultButtonsContainer.appendChild(успелButton);
+        неуспелButton.style.display = 'inline-block';
+        resultButtonsContainer.appendChild(неуспелButton);
+        timeIsUp = true;
+    }
+
+    startButton.addEventListener('click', startTimer);
+    stopButton.addEventListener('click', stopTimer);
+    resetButton.addEventListener('click', resetTimer);
+
+    успелButton.addEventListener('click', function () { showResult('Успел'); });
+    неуспелButton.addEventListener('click', function () { showResult('Не успел'); });
+
+    function showResult(result) {
+        resultMessageElement.textContent = `Результат: ${result}`;
+        secondsElement.style.color = result === 'Успел' ? 'green' : 'red';
+        resetButton.disabled = false;
+        успелButton.style.display = 'none';
+        неуспелButton.style.display = 'none';
+        timeIsUp = false;
+    }
 });

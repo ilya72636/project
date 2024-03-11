@@ -162,7 +162,37 @@
 
 
 /*-------STOP WATCH------ */
+.resultContainer {
+    text-align: center;
+    margin-top: 20px;
+}
 
+.resultMessage {
+    color: white;
+    font-size: 20px;
+}
+
+.resultButtons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.resultButtons button {
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--orange);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.resultButtons button:hover {
+    background-color: #ffcc00;
+}
 .time {
     color: white;
     display: flex;
@@ -190,4 +220,36 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+/* Добавьте эти стили в ваш CSS-файл или внутри тега <style> в head документа */
+
+/* Общий блок для результатов и кнопок */
+#resultContainer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Сообщение о результате */
+#resultMessage {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Кнопки "Успел" и "Не успел" */
+#resultButtons {
+    display: flex;
+    justify-content: center;
+}
+
+#resultButtons button {
+    margin: 0 10px;
+}
+
+/* Стили для цифр в счетчике */
+#seconds {
+    font-size: 80px;
+    color: rgb(255, 246, 246); /* начальный цвет */
+    transition: color 0.5s ease; /* добавлен переход для плавного изменения цвета */
 }
