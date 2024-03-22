@@ -6,47 +6,31 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/core.css">
     <link rel="stylesheet" href="../css/home_works.css">
-
-    <!-- <style>
-        /* Добавьте эти стили в ваш CSS-файл или внутри тега <style> в head документа */
-
-        /* Общий блок для результатов и кнопок */
-        #resultContainer {
-            text-align: center;
-            margin-top: 20px;
+    <style>
+        .parent_block {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 2px solid black;
+            margin: 50px auto;
+            overflow: hidden;
         }
-
-        /* Сообщение о результате */
-        #resultMessage {
-            font-size: 18px;
-            margin-bottom: 10px;
+        .child_block {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
         }
-
-        /* Кнопки "Успел" и "Не успел" */
-        #resultButtons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+        .child_block2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
         }
-
-        #resultButtons button {
-            margin: 0 10px;
-        }
-
-        /* Стили для цифр в счетчике */
-        .time_block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #seconds {
-            font-size: 40px;
-            color: black; /* начальный цвет */
-            transition: color 0.5s ease; /* добавлен переход для плавного изменения цвета */
-        }
-
-    </style> -->
+    </style>
+    
 </head>
 <body>
 
@@ -94,7 +78,8 @@
             <h3>Home work 1 (part 2)</h3>
             <div class="inner_move_block">
                 <div class="parent_block">
-                    <div class="child_block"></div>
+                    <div class="child_block" style="top: 0; left: 0;"></div>
+                    <div class="child_block2" style="bottom: 0; right: 0;"></div>
                 </div>
             </div>
         </div>

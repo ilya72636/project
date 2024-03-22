@@ -2,7 +2,7 @@
 /* GMAIL BLOCK */
 
 .gmail_block {
-    background: black;
+    /* background: black; */
     padding: 100px 0;
 }
 
@@ -30,7 +30,7 @@
 /* MOVE BLOCK */
 
 .move_block {
-    background: black;
+    /* background: black; */
     padding: 100px 0;
 }
 
@@ -212,7 +212,7 @@
 
 .stopwatch {
     padding: 100px 0;
-    background: black;
+    /* background: black; */
 }
 
 .time_buttons {
@@ -221,9 +221,7 @@
     display: flex;
     justify-content: space-between;
 }
-/* Добавьте эти стили в ваш CSS-файл или внутри тега <style> в head документа */
 
-/* Общий блок для результатов и кнопок */
 #resultContainer {
     text-align: center;
     display: flex;
@@ -231,13 +229,12 @@
     flex-wrap: wrap;
 }
 
-/* Сообщение о результате */
+
 #resultMessage {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-/* Кнопки "Успел" и "Не успел" */
 #resultButtons {
     display: flex;
     justify-content: center;
@@ -247,9 +244,8 @@
     margin: 0 10px;
 }
 
-/* Стили для цифр в счетчике */
 #seconds {
     font-size: 80px;
-    color: rgb(255, 246, 246); /* начальный цвет */
-    transition: color 0.5s ease; /* добавлен переход для плавного изменения цвета */
+    color: rgb(255, 246, 246); 
+    transition: color 0.5s ease; 
 }

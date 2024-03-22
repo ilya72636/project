@@ -3,7 +3,7 @@
 
 .header {
     height: 80px;
-    background: #2c2d2f;
+    /* background: #2c2d2f; */
     display: flex;
     align-items: center;
     width: 100%;
@@ -21,7 +21,7 @@
 
 /* LOGOTYPE */
 
-.logotype {
+.logotype {     
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +56,7 @@
 
 .main_block {
     padding: 100px 0;
-    background: black;
+    /* background: black; */
 }
 
 /* BUTTONS COLOR PICKER */
@@ -97,7 +97,7 @@
 
 .slider_block {
     padding: 100px 0;
-    background: black;
+    /* background: black; */
 }
 
 .slider {
@@ -154,7 +154,7 @@
 /* VIDEO BLOCK */
 
 .block_video {
-    background: black;
+    /* background: black; */
     padding: 100px 0;
 }
 
@@ -229,7 +229,7 @@
 /*-------BOTTLE-------*/
 
 .botlle {
-    background: black;
+    /* background: black; */
     padding: 100px 0;
 }
 
@@ -249,6 +249,15 @@
     animation: animate 5s linear infinite;
     transform-origin: bottom center;
     animation-play-state: run;
+}
+.zla{
+    color: rgb(179, 0, 0);
+}
+.dobra{
+    color: var(--orange);
+}
+.vibor{
+    margin-bottom: 58px;
 }
 
 @keyframes animate {

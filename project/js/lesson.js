@@ -66,3 +66,73 @@ tabsPares.onclick = (event) => {
     }
 };
 
+
+
+
+
+const somInput = document.querySelector('#som');
+const usdInput = document.querySelector('#usd');
+const eurInput = document.querySelector('#eur');
+
+const convertAndDisplay = (input, currency) => {
+    const request = new XMLHttpRequest();
+    request.open('GET', '../data/conventor.json');
+    request.setRequestHeader('Content-type', 'application/json');
+    request.send();
+
+    request.onload = () => {
+        const data = JSON.parse(request.response);
+        switch (currency) {
+            case 'som':
+                usdInput.value = (input.value / data.usd).toFixed(2);
+                eurInput.value = (input.value / data.eur).toFixed(2);
+                break;
+            case 'usd':
+                somInput.value = (input.value * data.usd).toFixed(2);
+                eurInput.value = (somInput.value / data.eur).toFixed(2);
+                break;
+            case 'eur':
+                somInput.value = (input.value * data.eur).toFixed(2);
+                usdInput.value = (somInput.value * data.usd).toFixed(2);
+                break;
+            default:
+                break;
+        }
+    };
+};
+
+somInput.addEventListener('input', () => {
+    convertAndDisplay(somInput, 'som');
+});
+
+usdInput.addEventListener('input', () => {
+    convertAndDisplay(usdInput, 'usd');
+});
+
+eurInput.addEventListener('input', () => {
+    convertAndDisplay(eurInput, 'eur');
+});
+
+
+
+
+
+
+
+
+
+
+
+// somImpyt.oninput('input', (event)=>{
+//     const request = new XMLHttpRequest()
+//     request.open('GET','../data/conventor.json')
+//     request.setRequestHeader('Content-type','application/ison')
+//     request.send()
+
+//     request.onload= ()=>{
+//         console.log(request.response);
+
+//         usdImpyt.value=(somImpyt.value /data.usd ) .toFixed(2)
+
+//     }
+// })
