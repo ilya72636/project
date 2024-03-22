@@ -120,19 +120,3 @@ eurInput.addEventListener('input', () => {
 
 
 
-
-
-
-// somImpyt.oninput('input', (event)=>{
-//     const request = new XMLHttpRequest()
-//     request.open('GET','../data/conventor.json')
-//     request.setRequestHeader('Content-type','application/ison')
-//     request.send()
-
-//     request.onload= ()=>{
-//         console.log(request.response);
-
-//         usdImpyt.value=(somImpyt.value /data.usd ) .toFixed(2)
-
-//     }
-// })
