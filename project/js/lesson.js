@@ -114,7 +114,26 @@ eurInput.addEventListener('input', () => {
 });
 
 
+const cardBloz=document.querySelector('.card')
+const btnPrev=document.querySelector('#btn-prev')
+const btnNext=document.querySelector('#btn-next')
 
+
+
+let count =0
+
+btnNext.onclick=()=>{
+    count++
+    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+        .then(response=>response.json())
+        .then(data=>{
+            cardBloz.innerHTML=`
+                <p>${data.title}</p>
+                <p style="color:${data.completed ? 'green':'red'}">${data.completed}</p>
+                <span>${data.id}</span>
+            `
+        })
+}
 
 
 

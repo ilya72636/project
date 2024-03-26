@@ -20,173 +20,59 @@ gmailButton.addEventListener('click', ()=>{
 
 
 
-// квадрат
-document.addEventListener('DOMContentLoaded', function () {
-    const parentBlock = document.querySelector('.parent_block');
-    const childBlock1 = document.querySelector('.child_block');
-    const childBlock2 = document.querySelector('.child_block2');
+// // квадрат
+// document.addEventListener('DOMContentLoaded', function () {
+//     const parentBlock = document.querySelector('.parent_block');
+//     const childBlock1 = document.querySelector('.child_block');
+//     const childBlock2 = document.querySelector('.child_block2');
 
-    let dx1 = 3;
-    let dy1 = 3;
-    let dx2 = -3;
-    let dy2 = -3;
+//     let dx1 = 3;
+//     let dy1 = 3;
+//     let dx2 = -3;
+//     let dy2 = -3;
 
-    function moveBlocks() {
-        let rect1 = childBlock1.getBoundingClientRect();
-        let rect2 = childBlock2.getBoundingClientRect();
+//     function moveBlocks() {
+//         let rect1 = childBlock1.getBoundingClientRect();
+//         let rect2 = childBlock2.getBoundingClientRect();
 
-        if (rect1.right >= parentBlock.offsetWidth || rect1.left <= 0) {
-            dx1 = -dx1;
-        }
-        if (rect1.bottom >= parentBlock.offsetHeight || rect1.top <= 0) {
-            dy1 = -dy1;
-        }
-        if (rect2.right >= parentBlock.offsetWidth || rect2.left <= 0) {
-            dx2 = -dx2;
-        }
-        if (rect2.bottom >= parentBlock.offsetHeight || rect2.top <= 0) {
-            dy2 = -dy2;
-        }
+//         if (rect1.right >= parentBlock.offsetWidth || rect1.left <= 0) {
+//             dx1 = -dx1;
+//         }
+//         if (rect1.bottom >= parentBlock.offsetHeight || rect1.top <= 0) {
+//             dy1 = -dy1;
+//         }
+//         if (rect2.right >= parentBlock.offsetWidth || rect2.left <= 0) {
+//             dx2 = -dx2;
+//         }
+//         if (rect2.bottom >= parentBlock.offsetHeight || rect2.top <= 0) {
+//             dy2 = -dy2;
+//         }
 
-        let distanceX = rect1.left - rect2.left;
-        let distanceY = rect1.top - rect2.top;
-        let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+//         let distanceX = rect1.left - rect2.left;
+//         let distanceY = rect1.top - rect2.top;
+//         let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-        if (distance < childBlock1.offsetWidth) {
-            // Отталкивание
-            let temp = dx1;
-            dx1 = dx2;
-            dx2 = temp;
-            temp = dy1;
-            dy1 = dy2;
-            dy2 = temp;
-        }
+//         if (distance < childBlock1.offsetWidth) {
+//             // Отталкивание
+//             let temp = dx1;
+//             dx1 = dx2;
+//             dx2 = temp;
+//             temp = dy1;
+//             dy1 = dy2;
+//             dy2 = temp;
+//         }
 
-        childBlock1.style.left = rect1.left + dx1 + 'px';
-        childBlock1.style.top = rect1.top + dy1 + 'px';
+//         childBlock1.style.left = rect1.left + dx1 + 'px';
+//         childBlock1.style.top = rect1.top + dy1 + 'px';
 
-        childBlock2.style.left = rect2.left + dx2 + 'px';
-        childBlock2.style.top = rect2.top + dy2 + 'px';
+//         childBlock2.style.left = rect2.left + dx2 + 'px';
+//         childBlock2.style.top = rect2.top + dy2 + 'px';
 
-        requestAnimationFrame(moveBlocks);
-    }
+//         requestAnimationFrame(moveBlocks);
+//     }
 
-    moveBlocks();
-});
-
-
-
-
-// сикундамер   DZ_2
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     var secondsDisplay = document.getElementById("seconds");
-//     var startButton = document.getElementById("start");
-//     var stopButton = document.getElementById("stop");
-//     var resetButton = document.getElementById("reset");
-
-//     var timerInterval;
-//     var counter = 0;
-
-//     startButton.addEventListener("click", function () {
-//         startButton.disabled = true;
-//         stopButton.disabled = false;
-//         resetButton.disabled = false;
-
-//         timerInterval = setInterval(function () {
-//             counter++;
-//             secondsDisplay.textContent = counter;
-//         }, 1000);
-//     });
-
-//     stopButton.addEventListener("click", function () {
-//         startButton.disabled = false;
-//         stopButton.disabled = true;
-//         clearInterval(timerInterval);
-//     });
-
-//     resetButton.addEventListener("click", function () {
-//         counter = 0;
-//         secondsDisplay.textContent = counter;
-//         startButton.disabled = false;
-//         stopButton.disabled = true;
-//         resetButton.disabled = true;
-//         clearInterval(timerInterval);
-//     });
+//     moveBlocks();
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const parentContainer = document.querySelector('.container');

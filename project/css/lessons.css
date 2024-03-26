@@ -2,7 +2,7 @@
 /* PHONE CHECKER */
 
 .phone_block {
-    background: black;
+    /* background: black; */
     padding: 100px 0;
 }
 
@@ -30,7 +30,7 @@
 /* TAB SLIDER */
 
 .tab_slider {
-    background: black;
+    /* background: black; */
     padding: 100px 0;
 }
 
@@ -89,7 +89,7 @@
 /*------CARD SWITCHER------*/
 
 .card_switcher {
-    background-color: black;
+    /* background-color: black; */
     padding: 100px 0;
 }
 
@@ -128,7 +128,7 @@
 
 .converter {
     padding: 100px 0;
-    background-color: black;
+    /* background-color: black; */
 }
 
 .inner_converter {
@@ -149,7 +149,7 @@
 
 .weather {
     padding: 100px 0;
-    background-color: black;
+    /* background-color: black; */
 }
 
 .inner_weather > div {
@@ -170,4 +170,23 @@
 
 hr {
     width: 100%;
+}
+
+
+
+
+/* button */
+.button>div{
+    background-image: url('../img/apple.png') ;   
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 40px;
 }
