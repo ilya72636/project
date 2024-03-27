@@ -114,28 +114,58 @@ eurInput.addEventListener('input', () => {
 });
 
 
-const cardBloz=document.querySelector('.card')
-const btnPrev=document.querySelector('#btn-prev')
-const btnNext=document.querySelector('#btn-next')
 
 
 
-let count =0
+const cardBloz = document.querySelector('.card');
+const btnPrev = document.querySelector('#btn-prev');
+const btnNext = document.querySelector('#btn-next');
 
-btnNext.onclick=()=>{
-    count++
-    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
-        .then(response=>response.json())
-        .then(data=>{
-            cardBloz.innerHTML=`
+let currentCard = 1;
+
+const loadCardData = (cardNumber) => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${cardNumber}`)
+        .then(response => response.json())
+        .then(data => {
+            cardBloz.innerHTML = `
                 <p>${data.title}</p>
-                <p style="color:${data.completed ? 'green':'red'}">${data.completed}</p>
+                <p style="color:${data.completed ? 'green' : 'red'}">${data.completed}</p>
                 <span>${data.id}</span>
-            `
+            `;
         })
-}
+        .catch(error => {
+            console.error('Error fetching card data:', error);
+        });
+};
+
+const goToCard = (cardNumber) => {
+    if (cardNumber === 0) {
+        currentCard = 200;
+    } else if (cardNumber === 201) {
+        currentCard = 1;
+    } else {
+        currentCard = cardNumber;
+    }
+    loadCardData(currentCard);
+};
+
+loadCardData(currentCard);
+
+btnPrev.addEventListener('click', () => goToCard(currentCard - 1));
+btnNext.addEventListener('click', () => goToCard(currentCard + 1));
 
 
 
+
+
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(postsData => {
+        console.log("Posts data:", postsData);
+    })
+    .catch(error => {
+        console.error('Error fetching posts data:', error);
+    });
 
 
