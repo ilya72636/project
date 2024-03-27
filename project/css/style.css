@@ -4,6 +4,8 @@
 .header {
     height: 80px;
     /* background: #2c2d2f; */
+    background-color: rgba(0, 0, 0, 0.2); 
+    z-index: -1; 
     display: flex;
     align-items: center;
     width: 100%;
@@ -72,6 +74,13 @@
     border-color: white !important;
 }
 
+.colors-buttons button {
+    opacity: 0; /* Начальная прозрачность: кнопки скрыты */
+    transition: opacity 0.5s ease; /* Плавное появление с прозрачностию */
+}
+.colors-buttons button.show {
+    opacity: 1; /* После применения класса "show", кнопки становятся видимыми */
+}
 /* FOOTER */
 
 .footer {
@@ -457,5 +466,19 @@
     justify-content: center;
     margin-top: 35px;
     margin-bottom: 40px;
+    animation: pulse-animation 1s infinite;
 }
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 

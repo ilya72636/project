@@ -75,3 +75,29 @@ prev.onclick = () => {
 }
 
 autoSlider(index)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Ждать 2.7 секунды, затем добавить класс "show" для показа кнопок
+setTimeout(function() {
+    document.querySelectorAll('.colors-buttons button').forEach(function(button) {
+        button.classList.add('show');
+    });
+}, 2700);
+
