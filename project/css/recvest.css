@@ -1,0 +1,43 @@
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-item {
+    border-radius: 12px; /* Увеличим радиус скругления углов */
+    margin: 20px; /* Увеличим отступы между карточками */
+    padding: 20px; /* Увеличим внутренние отступы для лучшего разделения контента */
+    width: 300px;
+    border: 1px solid var(--orange);
+}
+
+.card-item img {
+    max-width: 100%;
+    border-radius: 12px; /* Увеличим радиус скругления углов изображения */
+    margin-bottom: 20px; /* Увеличим отступ после изображения */
+}
+
+.card-container {
+    padding-top: 120px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-item h3 {
+    font-size: 18px; /* Размер заголовка */
+    margin-bottom: 10px; /* Отступ после заголовка */
+    color: var(--orange); /* Цвет текста заголовка */
+}
+
+.card-item p {
+    font-size: 14px; /* Размер текста описания */
+    line-height: 1.6; /* Межстрочный интервал */
+}
+
+
+
+
+
+
+
+

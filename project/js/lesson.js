@@ -159,6 +159,47 @@ btnNext.addEventListener('click', () => goToCard(currentCard + 1));
 
 
 
+
+
+
+const serchInpyt = document.querySelector('.cityName');
+const citi = document.querySelector('.city');
+const temp = document.querySelector('.temp');
+
+const API_KEY='e417df62e04d3b1b111abeab19cea714'
+const url='http://api.openweathermap.org/data/2.5/weather'
+
+const citySerch=()=>{
+    serchInpyt.oninput=(event)=>{
+        fetch(`${url}?q=${event.target.value}&appid=${API_KEY}`)
+        .then(response=>response.json())
+        .then(data=>{
+            citi.innerHTML=data.main?data.name:'Город не наиден...'
+            temp.innerHTML=
+                data.name?.temp  
+                ?Math.round(temp.main?.temp - 237) + '&deg;C'
+                :'...'
+        })
+    }
+}
+citySerch()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
     .then(postsData => {
