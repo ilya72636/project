@@ -13,27 +13,25 @@
     </script>
     <style>
         .parent_block {
-            position: relative;
-            width: 400px;
-            height: 400px;
-            border: 2px solid black;
-            margin: 50px auto;
-            overflow: hidden;
-        }
-        .child_block {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            border-radius: 50%;
-        }
-        .child_block2 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: blue;
-            border-radius: 50%;
-        }
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border: 1px solid black;
+    }
+
+    .child_block {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+    }
+
+    .child_block2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+    }
     </style>
     
 </head>
@@ -86,8 +84,8 @@
             <h3 class=" animate__animated animate__zoomInUp wow" data-wow-delay=".3s">Home work 1 (part 2)</h3>
             <div class="inner_move_block animate__animated animate__zoomInUp wow" data-wow-delay="0.5s">
                 <div class="parent_block">
-                    <div class="child_block" style="top: 0; left: 0;"></div>
-                    <div class="child_block2" style="bottom: 0; right: 0;"></div>
+                    <div class="child_block" style="left: 0; top: 0;"></div>
+                    <div class="child_block2" style="left: 200px; top: 200px;"></div>
                 </div>
             </div>
         </div>
@@ -95,7 +93,7 @@
 
     <div class="stopwatch">
         <div class="container">
-            <h3 class=" animate__animated animate__zoomInUp wow" data-wow-delay=".3s">Home work 2 </h3>
+            <h3 class=" animate__animated animate__zoomInUp wow" data-wow-delay=".3s">Успей досчитать до 100 пока не закончился таймер</h3>
             <div class="time animate__animated animate__zoomInUp wow"data-wow-delay=".4s">
                 <div class="time_block ">
                     <div class="interval animate__animated animate__zoomInUp wow"data-wow-delay="5.s" id="seconds">0</div>
