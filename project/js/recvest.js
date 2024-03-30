@@ -11,6 +11,7 @@ function createCard(title, body) {
 
     const card = document.createElement('div');
     card.classList.add('card-item');
+    card.classList.add('scroll-item');
 
     const image = document.createElement('img');
     image.src = '../img/geeks.png'; 
@@ -34,9 +35,31 @@ async function displayCards() {
         data.forEach(post => {
             createCard(post.title, post.body);
         });
+
+        return Promise.resolve(); 
     } catch (error) {
         console.error(error.message);
     }
 }
 
-displayCards();
+displayCards().then(() => {
+    // анимация 
+    const scrollItem = document.querySelectorAll('.scroll-item');
+
+    const scrollAnimation = () => {
+        let windowCenter = (window.innerHeight / 2) + window.scrollY;
+        scrollItem.forEach(el => {
+            let scrollOffset = el.offsetTop + (el.offsetHeight / 5.5);
+            if (windowCenter >= scrollOffset) {
+                el.classList.add('animation-class');
+            } else {
+                el.classList.remove('animation-class');
+            }
+        });
+    };
+
+    scrollAnimation();
+    window.addEventListener('scroll', () => {
+        scrollAnimation();
+    });
+});
