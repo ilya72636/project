@@ -101,7 +101,7 @@ h4 {
 }
 
 strong {
-    color: rgb(38, 107, 255);
+    color: var(--orange);
 }
 
 label {

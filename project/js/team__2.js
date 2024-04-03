@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
     let returnButton = document.getElementById("returnMode");
     let warningText = document.getElementById("warningText");
+    let videoFrame = document.querySelector(".inner_block_video iframe");
 
     returnButton.addEventListener("click", function() {
         warningText.textContent = "только не прекосайся к запретному плоду!!!";
+        changeVideo2();
+        changeCSS2();
     });
 });
+
+function changeVideo2() {
+    let videoFrame = document.querySelector(".inner_block_video iframe");
+    videoFrame.src = "https://www.youtube.com/embed/whqQxRiH6Hc";
+}
 
 function changeTextTeam2() {
     let slide = document.querySelectorAll('.slide_card');
@@ -25,17 +33,19 @@ function changeTextTeam2() {
         } else if (titl.textContent === 'Лилит') {
             titl.textContent = 'сострадание';
             conten.textContent = 'Простыми словами, сострадание похоже на дежурного, который непрерывно проверяет, произошло ли какое-либо событие, и реагирует на него, когда оно происходит. Он имеет список задач, которые нужно выполнить, и он перебирает этот список событий одно за другим, обрабатывая каждое событие, когда оно наступает.';
-        }
+        }   
     });
 
     // Находим элемент с id "js-color"
-    let headin = document.getElementById("js-color");
+    let headinn = document.getElementById("js-titl");
     
     // Заменяем слово "Иисус" на "Сатана"
-    headin.textContent = "Иисус";
-    
-    // Заменяем описание
-    headin.nextElementSibling.textContent = "- центральная фигура христианской религии, сын Божий, учитель";
+    // if (heading) {
+    //     heading.textContent = "Сатана";
+    // }
+    if (headinn) {
+        headinn.innerHTML = '<strong id="js-color">Иисус</strong> - центральная фигура христианской религии, сын Божий, учитель.';
+    }
 }
 
 // Находим кнопку с id "returnMode"
@@ -56,10 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    let switchButto = document.getElementById("returnMode");
+function changeCSS2() {
+    // Изменяем значения переменных CSS
+    document.documentElement.style.setProperty('--orange', 'rgb(38, 107, 255)');
+}
 
-    switchButto.addEventListener("click", function() {
-        document.body.style.backgroundImage = "url('/project/img/crest.jpg')";
-    });
-});

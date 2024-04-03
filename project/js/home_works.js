@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startTimer() {
         if (!timer) {
-            timer = setInterval(updateTimer, 1000);
+            timer = setInterval(updateTimer, 10);
             startButton.disabled = true;
             stopButton.disabled = false;
             resetButton.disabled = false;
